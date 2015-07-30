@@ -1,0 +1,44 @@
+MECÂNICAS
+
+Movimentação:
+	A principio o jogador apenas pode se mover para os lados (Direita e esquerda)
+	Com o avançar do jogo novas habilidades são adiquiridas que possibilitam acesso a novas áreas do cenário que antes não eram bloqueadas naturalmente.
+
+Combate:
+	A principio o jogador apenas pode atacar utilizando uma espada zoada para se defender dos monstros. Para atacar ele aperta um botão do teclado.
+	Com o avançar do jogo novas habilidades vão se tornando disponíveis que combinam timing e habilidades de locomoção.
+	O uso de equipamentos e magias também pode alterar o funcionamento do combate.
+
+Habilidades:
+	São comandos utilizados pelo jogador para realizar ações dentro do jogo
+	
+	- Habilidades de movimento:
+		Utilizadas para mover o personagem pelo cenário de diferentes maneiras.
+	- Habilidades de combate:
+		Utilizadas para realizar golpes essenciais para matar os monstros.
+
+Magias:
+	Magias são uma categoria de habilidades especiais que têm um uso limitado baseado na quantidade de mana que o personagem do jogador pussui.
+
+	- Magias de Combate:
+		São utilizadas como armas
+	- Magias de Movimento:
+		São utilizadas como habilidades de movimento
+
+Itens:
+	Itens são objetos que podem ser coletados pelo personagem do jogador que são armazenados no inventário.
+
+	- Equipamento:
+		Equipamentos são itens que são associados ao personagem e concedem bonus em combate e novas habilidades.
+		Equipamentos só podem ser trocados na cidade, senão a porra vira putaria de trocar de equipamento toda hora.
+	- Consumíveis:
+		São itens que desaparecem depois de uma quantidade de uso (Uma vez ou mais, dependendo do item)
+		Podem exercer inúmeras funções, como: restaurar vida, aumentar atributos, abrir portas, etc.
+
+Crafting:
+	Crafting é possibilidade de combinar algus itens entre outros itens.
+
+	- Crafting Stations:
+		Lugares especiais para realizar crafting. Cada crafting station habilita apenas o crafting de um grupo específico de receitas.
+	- Crafting Recipes:
+		O personagem do jogador deve conhecer as receitas antes de poder combinar os itens.

@@ -1,0 +1,18 @@
+ENREDO
+
+Início:
+	Um herói (o jogador) sai da cidade pra matar bichinhos
+
+Personagens:
+   - NPCs
+	Herói
+	Mago
+	Soldadinhos
+   - Monstros
+	Slime
+	Plataralho
+
+Localidades:
+	Cidade
+	Floresta
+	

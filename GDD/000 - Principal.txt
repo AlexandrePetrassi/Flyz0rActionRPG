@@ -1,0 +1,8 @@
+PRINCIPAL
+
+Ideia: 
+	Action RPG de matar bichinhos
+
+Descrição:
+	Você controla um cara com uma espada e um escudo que sai de uma cidade pra matar bichinhos sem motivo nenhum.
+	Pra matar os bichinhos você aperta o botão e bate neles com a espada.
