@@ -6,3 +6,5 @@ Ideia:
 Descrição:
 	Você controla um cara com uma espada e um escudo que sai de uma cidade pra matar bichinhos sem motivo nenhum.
 	Pra matar os bichinhos você aperta o botão e bate neles com a espada.
+
+	Você pode pegar quests de bixinhos certos para matar e ganhar recompensas.
