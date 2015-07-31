@@ -1,0 +1,14 @@
+MOVIMENTAÇÃO
+
+Movimentação é parte fundamental do jogo, afinal de contas o jogo é basicamente andar com persoangem pra direita e pra esquerda. ¬¬
+O jogador controla seu personagem por meio do teclado utilizando as teclas WASD ou as Setas direcionais. 
+WASD e as setas direcionais desempenham exatamente a mesma função.
+
+	Lista de Habilidades de movimentação (Descritas detalhadamente na sessão Habilidades)
+		Andar e Correr
+		Pular e AirJump
+		Dash e AirDash
+		Andar na parede
+		Grudar na parede
+		Escorregar na parede
+		Pular da parede
