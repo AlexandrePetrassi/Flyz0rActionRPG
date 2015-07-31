@@ -1,0 +1,31 @@
+INPUT
+
+Esta sessão é responsável por manter uma lista de forma organizada o que cada botão faz.
+Um padrão tem que ser mantido. Se o paradigma do jogo muda, os botões têm que continuar funcionando de forma análoga.
+
+A ideia é que seja o utilizado o mínimo de teclas possível para deixar o jogo mais simples para o jogador, e evitar a putaria que acontece quando se tenta emular playstation no PC, ou os MMOs que que configuram 3216371812 atalhos diferentes pra cada uma das teclas.
+Se vamos usar atalhos para skills, que usemos isso de forma inteligente.
+
+Todas as teclas são reconfiguráveis pelo menu do jogo.
+
+	[A] [D] [Seta para Esquerda] [Seta para Direita]
+		Movimentação no eixo Horizontal. Tanto para o personagem do jogador quanto em movimentação nos Menus.
+
+	[W] [Seta para Cima]
+		Movimentação para cima nos menus.
+	
+	[S] [Seta para Baixo]
+		Abaixar. Movimentação para baixo nos menus.
+
+	[Espaço]
+		Habilidade 0#
+		Pular, ou outra habilidade configurada pelo jogador.
+
+	NumPad
+		Cada botão associado a uma habilidade diferente.
+
+	[E] [Enter]
+		Confirmação nos menus
+	
+	[Tab] [Backspace]
+		Cancelamento dos menus ou invocação do menu principal quando nenhum menu estiver ativo
