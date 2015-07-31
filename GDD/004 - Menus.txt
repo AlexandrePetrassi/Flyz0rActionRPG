@@ -1,0 +1,48 @@
+Menus
+
+O jogo possui uma grande quantidade de menus com inúmeras funções diferentes.
+
+MENU DO TÍTULO
+	Menu inicial com as opções de: Começar novo jogo; Carregar Jogo; Opções; Extras; Sair.
+
+MENU PRINCIPAL
+	Menu ativado "basicamente" a qualquer momento do jogo com outros submenus.
+	
+	- Inventário
+		Listagem de todos os itens possuidos pelo personagem do jogador com opções de equipar, usar, jogar itens fora etc
+	
+	- Habilidades
+		Listagem de todas as habilidades possuidas pelo personagem do jogador.
+	
+	- Status
+		Listagem de todos os atributos do personagem do jogador
+
+	- Opções
+		Uma lista com opções que podem ser ajustadas pelo jogador
+
+	Sair
+		Não é um sub menu, apenas uma opção de ir para tela de título.
+
+LOJA:
+	Menu de troca de itens com NPCs na cidade
+
+	- Comprar:
+		Comprar itens usando dinheiro. Itens são adicionados ao inventário do jogador.
+	
+	- Vender:		
+		Vender itens por dinheiro. Itens são removidos do inventário do jogador.
+
+Crafting Stations
+	Estações de crafting encontradas na cidade para produzir itens melhores
+
+	- Crafting:
+		Menu de Crafting correspondente a crafstation.
+
+DIÁLOGO
+	Interações do personagem do jogador com os outros NPCs	
+
+	- Conversa padrão
+		Menu básico de conversa padrão sem opções
+
+	- Lista de respostas
+		Menu com uma pergunta e opções para respostas
