@@ -1,6 +1,7 @@
 Menus
 
 O jogo possui uma grande quantidade de menus com inúmeras funções diferentes.
+Os menus são janelas azuis estilo Final Fantasy com uma pá de opções com iconizinhos bonitos.
 
 MENU DO TÍTULO
 	Menu inicial com as opções de: Começar novo jogo; Carregar Jogo; Opções; Extras; Sair.
