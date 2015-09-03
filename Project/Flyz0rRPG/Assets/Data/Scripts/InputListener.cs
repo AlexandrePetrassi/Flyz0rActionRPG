@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// SCRIPT   NAME: Input listener
 /// CREATION DATE: 22/08/15
-/// EDTION   DATE: 23/08/15
+/// EDTION   DATE: 29/08/15
 /// AUTHOR       : Alexandre "CaRaCrAzY" "Fireblizzard" Petrassi Cardoso
 /// </summary>
 
@@ -15,21 +15,15 @@ namespace Fireblizzard{
 		/// <summary>
 		/// Manages input events like "onAxisDown", "onAxisUp", "onAxisDoubleTap" using Unity's InputManager information
 		/// </summary>
-		public class InputListener : MonoBehaviour {
+		public class InputListener : Singleton<InputListener> {
 
 			// Fields
 			[Tooltip("Axes that will have its events listened by this script")]
 			[SerializeField] Axis[] axes;
-			static InputListener self; // SelfReference
 
 			// Methods
-
-			/// <summary>
-			/// Self reference itself
-			/// </summary>
-			void Start () {
-				if(self != null) Destroy(gameObject);
-				else self = this;
+			void Awake(){
+				DontDestroyOnLoad(gameObject);
 			}
 
 			/// <summary>
@@ -44,7 +38,7 @@ namespace Fireblizzard{
 			/// Returns an axis
 			/// </summary>
 			public static Axis getAxis(string axisName){
-				foreach(Axis axis in self.axes)
+				foreach(Axis axis in Instance.axes)
 					if(axis.name == axisName) return axis;
 				return null;
 			}
@@ -71,15 +65,21 @@ namespace Fireblizzard{
 			[SerializeField] public string name;
 			[Tooltip("Tolerance time for triggering an OnDoubleTap event between the last two key presses")]
 			[SerializeField] float doubleTapMaxInterval = 0.4f;
-			[Tooltip("Tolerance time for triggering an OnMultiTap event between the last four key presses")]
-			[SerializeField] float multiTapMaxInterval = 1.2f;
 			// Axis' state
 			AxisState state;
 			// Flags indicating this axis raw state in the current and previous frame respectively
 			bool isPressed, wasPressed;
-			// Moment in time that the last four taps occurred
-			// these initial values are vaguely sparced to guarantee that a doubleTap or multiTap isn't registered at initialization
-			float[] tapTime = new float[4]{-3000,-2000,-1000,-1};
+			// Moment in time that the last two taps occurred
+			float _lastTapTime, previousTapTime;
+			float lastTapTime{
+				get{
+					return _lastTapTime;
+				}
+				set{
+					previousTapTime = _lastTapTime;
+					_lastTapTime = value;
+				}
+			}
 
 			// Methods
 
@@ -101,7 +101,7 @@ namespace Fireblizzard{
 						state = AxisState.onAxisPressed;
 					}else{
 						state = AxisState.onAxisUp;
-						registerTapTime();
+						lastTapTime = Time.time;
 					}
 				}else{
 					if(isPressed){
@@ -110,16 +110,6 @@ namespace Fireblizzard{
 						state = AxisState.onAxisUnpressed;
 					}
 				}
-			}
-
-			/// <summary>
-			/// Registers a new tap
-			/// </summary>
-			void registerTapTime(){
-				tapTime[0] = tapTime[1];
-				tapTime[1] = tapTime[2];
-				tapTime[2] = tapTime[3];
-				tapTime[3] = Time.time;
 			}
 
 			/// <summary>
@@ -133,15 +123,9 @@ namespace Fireblizzard{
 			/// returns true when this axis is registering a double tap event
 			/// </summary>
 			public bool onDoubleTap(){
-				return (getState(AxisState.onAxisUp) && tapTime[3] - tapTime[2] < doubleTapMaxInterval);
+				return (getState(AxisState.onAxisUp) && lastTapTime - previousTapTime < doubleTapMaxInterval);
 			}
 
-			/// <summary>
-			/// returns true when this axis is registering a multi tap event
-			/// </summary>
-			public bool onMultiTap(){
-				return (Time.time - tapTime[0] < multiTapMaxInterval);
-			}
 		}
 	}
 }

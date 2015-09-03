@@ -46,9 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Data\Scripts\Ability.cs" />
      <Compile Include="Assets\Data\Scripts\Animation.cs" />
+     <Compile Include="Assets\Data\Scripts\BodyCollision.cs" />
+     <Compile Include="Assets\Data\Scripts\BodyPart.cs" />
      <Compile Include="Assets\Data\Scripts\InputListener.cs" />
      <Compile Include="Assets\Data\Scripts\Jump.cs" />
+     <Compile Include="Assets\Data\Scripts\Platform.cs" />
+     <Compile Include="Assets\Data\Scripts\Singleton.cs" />
      <Compile Include="Assets\Data\Scripts\Walk.cs" />
      <None Include="Assets\Data\Shaders\SpriteFlash.shader" />
  <Reference Include="UnityEngine.UI">

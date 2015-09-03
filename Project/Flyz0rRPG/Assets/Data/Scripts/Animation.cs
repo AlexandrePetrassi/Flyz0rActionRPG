@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// SCRIPT   NAME: Animation
+/// CREATION DATE: 22/08/15
+/// EDTION   DATE: 28/08/15
+/// AUTHOR       : Alexandre "CaRaCrAzY" "Fireblizzard" Petrassi Cardoso
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
 namespace Fireblizzard{
@@ -9,11 +16,13 @@ namespace Fireblizzard{
 
 			Animator animator;
 			Rigidbody2D rigidBody;
+			BodyCollision bodyCollision;
 
 			// Use this for initialization
 			void Start () {
 				animator = GetComponent<Animator>();
 				rigidBody = GetComponent<Rigidbody2D>();
+				bodyCollision = GetComponent<BodyCollision>();
 			}
 			
 			// Update is called once per frame
