@@ -1,15 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Data\Scripts\Ability.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Data\Scripts\Player\Jump.cs">
     <Files>
-      <File FileName="Assets\Data\Scripts\Jump.cs" Line="35" Column="14" />
-      <File FileName="Assets\Data\Scripts\Animation.cs" Line="30" Column="20" />
-      <File FileName="Assets\Data\Scripts\InputListener.cs" Line="72" Column="53" />
-      <File FileName="Assets\Data\Scripts\Walk.cs" Line="1" Column="1" />
-      <File FileName="Assets\Data\Scripts\BodyCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets\Data\Scripts\BodyPart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Data\Scripts\Platform.cs" Line="1" Column="1" />
-      <File FileName="Assets\Data\Scripts\Ability.cs" Line="29" Column="21" />
+      <File FileName="Assets\Data\Scripts\Enums\Enums.cs" Line="16" Column="9" />
+      <File FileName="Assets\Data\Scripts\InputManagement\Inputable.cs" Line="24" Column="20" />
+      <File FileName="Assets\Data\Scripts\InputManagement\InputListener.cs" Line="20" Column="5" />
+      <File FileName="Assets\Data\Scripts\Player\Jump.cs" Line="71" Column="39" />
+      <File FileName="Assets\Data\Scripts\CollisionManagement\BodyPart.cs" Line="8" Column="19" />
+      <File FileName="Assets\Data\Scripts\Player\Animation.cs" Line="12" Column="21" />
+      <File FileName="Assets\Data\Scripts\Player\Walk.cs" Line="22" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

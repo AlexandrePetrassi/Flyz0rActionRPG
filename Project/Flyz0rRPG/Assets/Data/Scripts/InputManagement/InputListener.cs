@@ -1,8 +1,8 @@
 ﻿/// <summary>
 /// SCRIPT   NAME: Input listener
 /// CREATION DATE: 22/08/15
-/// EDTION   DATE: 29/08/15
-/// AUTHOR       : Alexandre "CaRaCrAzY" "Fireblizzard" Petrassi Cardoso
+/// EDTION   DATE: 06/09/15
+/// AUTHOR       : Alexandre "CaRaCrAzY" Petrassi Cardoso
 /// </summary>
 
 using UnityEngine;
@@ -10,11 +10,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-namespace Fireblizzard{
+/// <summary>
+/// Manages input events like "onAxisDown", "onAxisUp", "onAxisDoubleTap" using Unity's InputManager information
+/// </summary>
+namespace CaRaCrAzY{
 	namespace InputManagement{
-		/// <summary>
-		/// Manages input events like "onAxisDown", "onAxisUp", "onAxisDoubleTap" using Unity's InputManager information
-		/// </summary>
 		public class InputListener : Singleton<InputListener> {
 
 			// Fields
@@ -24,6 +24,8 @@ namespace Fireblizzard{
 			// Methods
 			void Awake(){
 				DontDestroyOnLoad(gameObject);
+				foreach(Axis axis in axes)
+					axis.name = axis.axis.ToString();
 			}
 
 			/// <summary>
@@ -37,9 +39,9 @@ namespace Fireblizzard{
 			/// <summary>
 			/// Returns an axis
 			/// </summary>
-			public static Axis getAxis(string axisName){
-				foreach(Axis axis in Instance.axes)
-					if(axis.name == axisName) return axis;
+			public static Axis getAxis(Axes axis){
+				foreach(Axis _axis in Instance.axes)
+					if(_axis.axis == axis) return _axis;
 				return null;
 			}
 		}
@@ -47,11 +49,11 @@ namespace Fireblizzard{
 		/// <summary>
 		/// Axis possible states
 		/// </summary>
-		public enum AxisState{
-			onAxisUnpressed,
-			onAxisDown,
-			onAxisPressed,
-			onAxisUp,
+		public enum State{
+			starting,
+			started,
+			ending,
+			ended
 		}
 
 		/// <summary>
@@ -61,12 +63,24 @@ namespace Fireblizzard{
 		public class Axis{
 
 			// Fields
-			[Tooltip("This name MUST match the InputManager Axis' name")]
-			[SerializeField] public string name;
+			[HideInInspector] public string name;
+
+			[SerializeField]  Axes myAxis;
+			public Axes axis{
+				get{
+					return myAxis;
+				}
+			}
 			[Tooltip("Tolerance time for triggering an OnDoubleTap event between the last two key presses")]
 			[SerializeField] float doubleTapMaxInterval = 0.4f;
 			// Axis' state
-			AxisState state;
+			State myState;
+			public State state{
+				get{
+					return myState;
+				}
+			}
+
 			// Flags indicating this axis raw state in the current and previous frame respectively
 			bool isPressed, wasPressed;
 			// Moment in time that the last two taps occurred
@@ -98,16 +112,16 @@ namespace Fireblizzard{
 			void updateState(){
 				if(wasPressed){
 					if(isPressed){
-						state = AxisState.onAxisPressed;
+						myState = State.started;
 					}else{
-						state = AxisState.onAxisUp;
+						myState = State.ending;
 						lastTapTime = Time.time;
 					}
 				}else{
 					if(isPressed){
-						state = AxisState.onAxisDown;
+						myState = State.starting;
 					}else{
-						state = AxisState.onAxisUnpressed;
+						myState = State.ended;
 					}
 				}
 			}
@@ -115,15 +129,15 @@ namespace Fireblizzard{
 			/// <summary>
 			/// Returns true if this axis is on the specified state
 			/// </summary>
-			public bool getState(AxisState axisState){
-				return state == axisState;
+			public bool getState(State axisState){
+				return myState == axisState;
 			}
 
 			/// <summary>
 			/// returns true when this axis is registering a double tap event
 			/// </summary>
 			public bool onDoubleTap(){
-				return (getState(AxisState.onAxisUp) && lastTapTime - previousTapTime < doubleTapMaxInterval);
+				return (getState(State.starting) && lastTapTime - previousTapTime < doubleTapMaxInterval);
 			}
 
 		}

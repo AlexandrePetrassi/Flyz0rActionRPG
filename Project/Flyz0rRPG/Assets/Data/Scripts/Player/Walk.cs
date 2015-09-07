@@ -2,13 +2,13 @@
 /// SCRIPT   NAME: Walk
 /// CREATION DATE: 22/08/15
 /// EDTION   DATE: 23/08/15
-/// AUTHOR       : Alexandre "CaRaCrAzY" "Fireblizzard" Petrassi Cardoso
+/// AUTHOR       : Alexandre "CaRaCrAzY" Petrassi Cardoso
 /// </summary>
 
 using UnityEngine;
 using System.Collections;
 
-namespace Fireblizzard{
+namespace CaRaCrAzY{
 	namespace Player{
 		[RequireComponent(typeof(Rigidbody2D))]
 		public class Walk : MonoBehaviour{

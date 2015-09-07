@@ -2,13 +2,14 @@
 /// SCRIPT   NAME: Animation
 /// CREATION DATE: 22/08/15
 /// EDTION   DATE: 28/08/15
-/// AUTHOR       : Alexandre "CaRaCrAzY" "Fireblizzard" Petrassi Cardoso
+/// AUTHOR       : Alexandre "CaRaCrAzY" Petrassi Cardoso
 /// </summary>
 
 using UnityEngine;
 using System.Collections;
+using CaRaCrAzY.CollisionManagement;
 
-namespace Fireblizzard{
+namespace CaRaCrAzY{
 	namespace Player{
 		[RequireComponent(typeof(Animator))]
 		[RequireComponent(typeof(Rigidbody2D))]
@@ -16,13 +17,11 @@ namespace Fireblizzard{
 
 			Animator animator;
 			Rigidbody2D rigidBody;
-			BodyCollision bodyCollision;
 
 			// Use this for initialization
 			void Start () {
 				animator = GetComponent<Animator>();
 				rigidBody = GetComponent<Rigidbody2D>();
-				bodyCollision = GetComponent<BodyCollision>();
 			}
 			
 			// Update is called once per frame

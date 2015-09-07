@@ -46,15 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Data\Scripts\Ability.cs" />
-     <Compile Include="Assets\Data\Scripts\Animation.cs" />
-     <Compile Include="Assets\Data\Scripts\BodyCollision.cs" />
-     <Compile Include="Assets\Data\Scripts\BodyPart.cs" />
-     <Compile Include="Assets\Data\Scripts\InputListener.cs" />
-     <Compile Include="Assets\Data\Scripts\Jump.cs" />
-     <Compile Include="Assets\Data\Scripts\Platform.cs" />
-     <Compile Include="Assets\Data\Scripts\Singleton.cs" />
-     <Compile Include="Assets\Data\Scripts\Walk.cs" />
+     <Compile Include="Assets\Data\Scripts\CollisionManagement\BodyPart.cs" />
+     <Compile Include="Assets\Data\Scripts\CollisionManagement\Platform.cs" />
+     <Compile Include="Assets\Data\Scripts\Enums\Enums.cs" />
+     <Compile Include="Assets\Data\Scripts\General\Singleton.cs" />
+     <Compile Include="Assets\Data\Scripts\InputManagement\InputListener.cs" />
+     <Compile Include="Assets\Data\Scripts\InputManagement\Inputable.cs" />
+     <Compile Include="Assets\Data\Scripts\Player\Animation.cs" />
+     <Compile Include="Assets\Data\Scripts\Player\Jump.cs" />
+     <Compile Include="Assets\Data\Scripts\Player\Walk.cs" />
      <None Include="Assets\Data\Shaders\SpriteFlash.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
